@@ -1,7 +1,8 @@
 #+title: Linkmusario's NixOS Dotfiles
-#+begin_warning
-Disclaimer: These dotfiles are only meant to be used by me, and have only been tested by me.
-#+end_warning
+#+begin_export mardown
+> [!WARNING]
+> These dotfiles are only meant to be used by me, and have only been tested by me.
+#+end_export
 * Installation
 Ensure you have flakes enabled by puttings this into your configuration.nix:
 #+begin_src nix
