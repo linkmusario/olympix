@@ -27,9 +27,10 @@ sudo nixos-rebuild switch --flake ~/olympix#olympus
 #+end_src
 
 #+begin_quote
-Note: Doom Emacs has been installed imperatively, as it is a pain to declaritively with NixOS. Simply go to [[https://github.com/doomemacs/core][Doom Emacs]] and follow install instructions. The doom directory is symlinked to ~/.config/doom, however, doom can sometimes look at the ~/.doom.d folder for the config files. Change the symlink accordingly in home.nix.
+Note: Doom Emacs has been installed imperatively, as it is a pain to install declaratively with NixOS (I'm dumb it's not actually that hard). Simply go to [[https://github.com/doomemacs/core][Doom Emacs]] and follow install instructions. The doom directory is symlinked to _~/.config/doom_, however, doom can sometimes look at the _~/.doom.d_ folder for the config files. Change the symlink locations accordingly in home.nix.
 #+end_quote
 
 * Reason For Name
 Olympus has been hostname for Linux (beyond just NixOS) because of Kratos and the God of War games. My entire OS has various references to various interests of mine. However, mainly the references are to games because their the easiest references to make. Olympus is simply one of many references. The reason for why this repo is names olympix is because it is law that all NixOS dotfiles have 'ix' in it somewhere.
+
 Regarding my username (Linkmusario), it is a mashup of Link, Samus, and Mario. Each character is linked (no pun intended) with a core memory and so have been mashed together to make this monstrosity of a name.
