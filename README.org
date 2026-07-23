@@ -1,7 +1,7 @@
 #+title: Linkmusario's NixOS Dotfiles
-#+begin_quote
+#+begin_warning
 Disclaimer: These dotfiles are only meant to be used by me, and have only been tested by me.
-#+end_quote
+#+end_warning
 * Installation
 Ensure you have flakes enabled by puttings this into your configuration.nix:
 #+begin_src nix
