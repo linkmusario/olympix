@@ -34,6 +34,10 @@
 
 (setq doom-font (font-spec :family "Hurmit Nerd Font" :size 13))
 
+;; Transparency
+(set-frame-parameter nil 'alpha-background 80) ; For current frame
+(add-to-list 'default-frame-alist '(alpha-background . 80)) ; For all new frames henceforth
+
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
