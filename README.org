@@ -26,9 +26,17 @@ Finally, rebuild the system:
 sudo nixos-rebuild switch --flake ~/olympix#olympus
 #+end_src
 
-#+begin_quote
-Note: Doom Emacs has been installed imperatively, as it is a pain to install declaratively with NixOS (I'm dumb it's not actually that hard). Simply go to [[https://github.com/doomemacs/core][Doom Emacs]] and follow install instructions. The doom directory is symlinked to _~/.config/doom_, however, doom can sometimes look at the _~/.doom.d_ folder for the config files. Change the symlink locations accordingly in home.nix.
-#+end_quote
+* Things That Might Need Changing
+1. Username
+   These dotfiles use the "linkmusario" username. Either ensure the username already in the system is "linkmusario" or change the username found in =configuration.nix= to whatever the username on the system is.
+2. Doom Config Location
+   Doom Emacs has been installed imperatively, as it is a pain to install declaratively with NixOS (I'm dumb it's not actually that hard). Simply go to [[https://github.com/doomemacs/core][Doom Emacs]] and follow install instructions. The doom directory is symlinked to =~/.config/doom=, however, doom can sometimes look at the =~/.doom.d_= folder for the config files. Change the symlink locations accordingly in home.nix.
+3. Kanata Device
+   In the Kanata configuration (located in =configuration.nix=), the devices that Kanata observes are listed in =services.kanata.keyboards.internalKeyboard.devices=. If the keyboard being used is not a Ducky One 2 Mini then this setting will need to be changed. To look at the devices currently connected, run:
+   #+begin_src sh
+ls /dev/input/by-id/ | rg "event-kbd"
+   #+end_src
+   Copy whatever the correct keyboard is replace the Ducky One 2 Mini. Ensure to keep the =/dev/input/by-id/= filepath in the setting.
 
 * Reason For Name
 Olympus has been hostname for Linux (beyond just NixOS) because of Kratos and the God of War games. My entire OS has various references to various interests of mine. However, mainly the references are to games because their the easiest references to make. Olympus is simply one of many references. The reason for why this repo is names olympix is because it is law that all NixOS dotfiles have 'ix' in it somewhere.
