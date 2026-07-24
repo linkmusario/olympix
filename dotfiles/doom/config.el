@@ -32,7 +32,7 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
-(setq doom-font (font-spec :family "Hurmit Nerd Font" :size 13))
+(setq doom-font (font-spec :family "Hurmit Nerd Font" :size 14))
 
 ;; Transparency
 (set-frame-parameter nil 'alpha-background 80) ; For current frame

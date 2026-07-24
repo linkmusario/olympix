@@ -15,6 +15,26 @@
     #"clearcpuid=umip"
   ];
 
+  boot.kernelModules = [
+    "uinput"
+  ];
+
+  hardware.uinput.enable = true;
+
+  services.udev.extraRules = ''
+    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+  '';
+
+  users.groups.uinput = {  };
+
+  systemd.services.kanata-internalKeyboard.serviceConfig = {
+    SupplementaryGroups = [
+      "input"
+      "uinput"
+    ];
+  };
+
+
   networking.hostName = "olympus"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -65,7 +85,7 @@
   users.users."linkmusario" = {
     isNormalUser = true;
     description = "Linkmusario";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "uinput" ];
     packages = with pkgs; [];
     shell = pkgs.fish;
   };
@@ -107,6 +127,33 @@
     };
     gamescope.enable = true;
     gamemode.enable = true;
+  };
+
+  # Kanata config for capslock being esc/ctrl with modtap behaiviour
+  services.kanata = {
+    enable = true;
+    keyboards ={
+      internalKeyboard = {
+        devices = [
+         "/dev/input/by-id/usb-Ducky_Ducky_One2_Mini_RGB_DK-V1.10-201231-event-kbd"
+        ];
+        extraDefCfg = "process-unmapped-keys yes";
+        config = ''
+          (defsrc
+            caps
+          )
+
+          (defalias
+            escctrl (tap-hold 100 100 esc lctrl)
+          )
+
+          (deflayer base
+            @escctrl
+          )
+        '';
+
+      };
+    };
   };
    
 

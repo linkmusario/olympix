@@ -28,7 +28,7 @@
        (on-err "#0a0a0a")
        (on-err-container "#f6d5d8")
        (on-primary "#0a0a0a")
-       (on-primary-container "#636363")
+       (on-primary-container "#171717")
        (on-secondary "#e2e2e2")
        (on-secondary-container "#e6e6e6")
        (on-surface "#e2e2e2")
@@ -64,7 +64,7 @@
        (tertiary-fixed "#8a8a8a")
        (tertiary-fixed-dim "#2c2121")
        (on-primary-fixed "#0a0a0a")
-       (on-primary-fixed-variant "#636363")
+       (on-primary-fixed-variant "#171717")
        (on-secondary-fixed "#e2e2e2")
        (on-secondary-fixed-variant "#e6e6e6")
        (on-tertiary-fixed "#e2e2e2")
@@ -222,7 +222,7 @@
    `(which-key-special-key-face ((t (:foreground ,tertiary :weight bold))))
    
    ;; Line numbers
-   `(line-number ((t (:foreground ,outline-variant :inherit fixed-pitch))))
+   `(line-number ((t (:foreground ,"#575757" :inherit fixed-pitch))))
    `(line-number-current-line ((t (:foreground ,primary :weight bold :inherit fixed-pitch))))
    
    ;; Parenthesis matching
