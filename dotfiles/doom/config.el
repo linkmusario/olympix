@@ -83,3 +83,6 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Makes relative line numbers follow visual lines rather than logical lines (useful for org/markdown writing)
+(setq display-line-numbers-type 'visual)
